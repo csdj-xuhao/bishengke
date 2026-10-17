@@ -2,330 +2,379 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#071b3b">
-  <title>崩壞：星穹鐵道｜4.6 版本活動</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100b22">
+<title>星穹鐵道｜星際特別企劃</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    :root {
-      --navy: #071b3b;
-      --blue: #1268b8;
-      --cyan: #70e7ff;
-      --gold: #ffe6a0;
-      --white: #f6fbff;
-    }
+:root {
+  --purple: #a78bfa;
+  --pink: #f0abfc;
+  --silver: #f3efff;
+  --muted: #b8afcf;
+  --bg: #100b22;
+}
 
-    body {
-      min-height: 100vh;
-      padding: 24px 14px 40px;
-      font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
-      color: var(--white);
-      background:
-        radial-gradient(ellipse at top, #174b82 0%, transparent 48%),
-        linear-gradient(160deg, #06132b, #0b2c57 55%, #07172e);
-    }
+body {
+  min-height: 100vh;
+  padding: 28px 14px 45px;
+  font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  color: var(--silver);
+  background:
+    radial-gradient(ellipse at 15% 10%, #48306b 0%, transparent 34%),
+    radial-gradient(ellipse at 90% 35%, #30235e 0%, transparent 35%),
+    linear-gradient(155deg, #090715, #17102d 52%, #090817);
+  overflow-x: hidden;
+}
 
-    .page {
-      width: 100%;
-      max-width: 440px;
-      margin: 0 auto;
-    }
+.page {
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+}
 
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 4px 2px 18px;
-    }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3px 22px;
+}
 
-    .brand {
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-    }
+.logo {
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 900;
+  color: #f5eaff;
+}
 
-    .version {
-      padding: 7px 12px;
-      border: 1px solid rgba(112, 231, 255, .55);
-      border-radius: 20px;
-      background: rgba(23, 93, 153, .4);
-      color: #a8f2ff;
-      font-size: 12px;
-      font-weight: 700;
-    }
+.badge {
+  padding: 7px 12px;
+  border: 1px solid #8b76b9;
+  border-radius: 30px;
+  color: #e7d5ff;
+  background: rgba(126, 87, 194, .15);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 22px 16px 24px;
-      border: 1px solid rgba(132, 220, 255, .6);
-      border-radius: 24px;
-      background: linear-gradient(
-        155deg,
-        rgba(24, 79, 133, .95),
-        rgba(5, 22, 51, .98) 75%
-      );
-      box-shadow:
-        0 0 30px rgba(40, 163, 255, .16),
-        inset 0 0 28px rgba(80, 194, 255, .08);
-    }
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 28px 17px 22px;
+  border: 1px solid rgba(202, 170, 255, .38);
+  border-radius: 25px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(151, 108, 224, .2), transparent 55%),
+    linear-gradient(160deg, rgba(38, 27, 63, .97), rgba(13, 10, 29, .98));
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, .35),
+    0 0 35px rgba(153, 107, 255, .09);
+}
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -100px;
-      right: -110px;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      background: rgba(65, 190, 255, .13);
-      filter: blur(30px);
-      pointer-events: none;
-    }
+.hero::before,
+.hero::after {
+  content: "✦";
+  position: absolute;
+  color: rgba(235, 214, 255, .6);
+  pointer-events: none;
+}
 
-    .eyebrow {
-      position: relative;
-      margin-bottom: 10px;
-      color: var(--cyan);
-      text-align: center;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 3px;
-    }
+.hero::before {
+  top: 90px;
+  left: 15px;
+  font-size: 19px;
+}
 
-    h1 {
-      position: relative;
-      margin-bottom: 8px;
-      color: #fff;
-      text-align: center;
-      font-size: clamp(25px, 7vw, 34px);
-      line-height: 1.35;
-      font-weight: 900;
-      text-shadow: 0 3px 15px rgba(69, 192, 255, .45);
-    }
+.hero::after {
+  top: 160px;
+  right: 15px;
+  font-size: 14px;
+}
 
-    .subtitle {
-      position: relative;
-      margin-bottom: 20px;
-      color: #c9eaff;
-      text-align: center;
-      font-size: 14px;
-      line-height: 1.8;
-    }
+.kicker {
+  color: var(--pink);
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 5px;
+  font-weight: 800;
+}
 
-    .poster-frame {
-      position: relative;
-      overflow: hidden;
-      padding: 5px;
-      border: 1px solid rgba(130, 225, 255, .8);
-      border-radius: 17px;
-      background: linear-gradient(135deg, #83f0ff, #2465b4, #ffe4a0);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
-    }
+h1 {
+  margin-top: 13px;
+  text-align: center;
+  font-size: clamp(27px, 7vw, 36px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  color: #fffaff;
+  text-shadow: 0 0 22px rgba(211, 164, 255, .35);
+}
 
-    .poster {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      object-fit: contain;
-      background: #0b2c57;
-    }
+.subtitle {
+  margin-top: 8px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #cfc1e9;
+  font-size: 13px;
+  line-height: 1.9;
+}
 
-    .poster-note {
-      margin-top: 10px;
-      color: #b9d8f3;
-      text-align: center;
-      font-size: 11px;
-      line-height: 1.7;
-    }
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #cbb1ff;
+  font-size: 11px;
+  letter-spacing: 2px;
+  justify-content: center;
+}
 
-    .reward-card {
-      margin-top: 20px;
-      padding: 20px 16px;
-      border: 1px solid rgba(122, 205, 255, .35);
-      border-radius: 18px;
-      background: rgba(4, 20, 46, .75);
-      text-align: center;
-    }
+.divider::before,
+.divider::after {
+  content: "";
+  width: 35px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #9e82d7);
+}
 
-    .reward-label {
-      color: #9bdfff;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
+.divider::after {
+  transform: rotate(180deg);
+}
 
-    .reward-title {
-      margin-top: 8px;
-      color: var(--gold);
-      font-size: 23px;
-      font-weight: 900;
-    }
+.poster-frame {
+  padding: 5px;
+  border-radius: 17px;
+  border: 1px solid rgba(220, 193, 255, .65);
+  background: linear-gradient(135deg, #f2d9ff, #8264bd, #32244e);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .35);
+}
 
-    .reward-description {
-      margin-top: 8px;
-      color: #c6d9ed;
-      font-size: 13px;
-      line-height: 1.9;
-    }
+.poster {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #211633;
+}
 
-    .action-button {
-      display: flex;
-      width: 100%;
-      min-height: 52px;
-      margin-top: 18px;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #c0f6ff;
-      border-radius: 13px;
-      background: linear-gradient(100deg, #1684d8, #49c9ef);
-      box-shadow: 0 5px 20px rgba(26, 162, 240, .25);
-      color: #fff;
-      font-size: 16px;
-      font-weight: 900;
-      text-decoration: none;
-      transition: transform .2s, filter .2s;
-      cursor: pointer;
-    }
+.poster-caption {
+  margin-top: 11px;
+  text-align: center;
+  color: #a99abc;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
 
-    .action-button:hover {
-      filter: brightness(1.12);
-      transform: translateY(-2px);
-    }
+.event-panel {
+  margin-top: 24px;
+  padding: 23px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(186, 155, 236, .3);
+  background: linear-gradient(145deg, rgba(65, 43, 92, .45), rgba(17, 12, 34, .65));
+  text-align: center;
+}
 
-    .info-card {
-      margin-top: 16px;
-      padding: 17px;
-      border: 1px solid rgba(125, 190, 239, .22);
-      border-radius: 16px;
-      background: rgba(5, 19, 42, .6);
-    }
+.panel-label {
+  color: #d4b8ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
 
-    .info-card h2 {
-      margin-bottom: 10px;
-      color: #a8eaff;
-      font-size: 15px;
-    }
+.event-title {
+  margin-top: 12px;
+  color: #fff4ff;
+  font-size: 23px;
+  font-weight: 900;
+}
 
-    .info-card p {
-      color: #c5d7e9;
-      font-size: 13px;
-      line-height: 2;
-    }
+.event-description {
+  margin-top: 11px;
+  color: #c2b5d7;
+  font-size: 13px;
+  line-height: 2;
+}
 
-    .notice {
-      margin-top: 15px;
-      padding: 12px;
-      border-radius: 10px;
-      background: rgba(0, 0, 0, .18);
-      color: #8faac4;
-      font-size: 11px;
-      line-height: 1.8;
-    }
+.line-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 54px;
+  margin-top: 21px;
+  padding: 12px 16px;
+  border: 1px solid #f1d4ff;
+  border-radius: 12px;
+  background: linear-gradient(100deg, #8151ca, #c079e8, #9275ef);
+  box-shadow: 0 0 25px rgba(182, 111, 244, .22);
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: .2s ease;
+}
 
-    footer {
-      padding-top: 22px;
-      color: #7894b2;
-      text-align: center;
-      font-size: 11px;
-      line-height: 1.8;
-    }
+.line-button:hover {
+  filter: brightness(1.13);
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px rgba(182, 111, 244, .38);
+}
 
-    @media (max-width: 360px) {
-      body {
-        padding: 14px 10px 28px;
-      }
+.line-note {
+  margin-top: 10px;
+  color: #9e91b5;
+  font-size: 10px;
+  line-height: 1.8;
+}
 
-      .hero {
-        padding: 18px 12px;
-      }
+.info {
+  margin-top: 16px;
+  padding: 19px;
+  border: 1px solid rgba(185, 155, 229, .2);
+  border-radius: 16px;
+  background: rgba(18, 13, 35, .7);
+}
 
-      .reward-title {
-        font-size: 20px;
-      }
-    }
-  </style>
+.info h2 {
+  margin-bottom: 12px;
+  color: #e0c6ff;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.info p {
+  color: #bcb0d0;
+  font-size: 12px;
+  line-height: 2.2;
+}
+
+.notice {
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(194, 167, 229, .15);
+  color: #8e829f;
+  font-size: 10px;
+  line-height: 1.9;
+}
+
+footer {
+  padding-top: 23px;
+  text-align: center;
+  color: #82758f;
+  font-size: 10px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 360px) {
+  body {
+    padding: 16px 10px 30px;
+  }
+
+  .hero {
+    padding: 22px 12px;
+  }
+
+  .event-title {
+    font-size: 20px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <main class="page">
+<main class="page">
 
-    <header class="topbar">
-      <div class="brand">STAR RAIL · EVENT</div>
-      <div class="version">4.6 VERSION</div>
-    </header>
+  <header class="header">
+    <div class="logo">ASTRAL EXPRESS</div>
+    <div class="badge">VERSION 4.6</div>
+  </header>
 
-    <section class="hero">
-      <p class="eyebrow">SPECIAL EVENT</p>
+  <section class="hero">
 
-      <h1>崩壞：星穹鐵道</h1>
+    <p class="kicker">A JOURNEY AMONG THE STARS</p>
 
-      <p class="subtitle">
-        4.6 版本活動企劃<br>
-        <strong>來自真珠的禮物</strong>
+    <h1>崩壞：星穹鐵道</h1>
+
+    <p class="subtitle">
+      4.6 版本特別企劃<br>
+      <strong>來自真珠的禮物</strong>
+    </p>
+
+    <div class="divider">SPECIAL EVENT</div>
+
+    <!-- 將活動圖片命名為 event.png，與 HTML 放在同一資料夾 -->
+    <div class="poster-frame">
+      <img
+        class="poster"
+        src="event.png"
+        alt="崩壞：星穹鐵道活動主視覺"
+      >
+    </div>
+
+    <p class="poster-caption">
+      ✦ A SPECIAL MOMENT IN THE UNIVERSE ✦
+    </p>
+
+    <section class="event-panel">
+      <p class="panel-label">EVENT INFORMATION</p>
+
+      <h2 class="event-title">來自真珠的禮物</h2>
+
+      <p class="event-description">
+        踏上星際旅程，查看活動相關資訊。<br>
+        更多內容請參考活動說明。
       </p>
 
-      <!-- 活動主視覺圖片：event.png 請放在 HTML 同一個資料夾 -->
-      <div class="poster-frame">
-        <img
-          class="poster"
-          src="event.png"
-          alt="崩壞：星穹鐵道 4.6 版本活動主視覺"
-        >
-      </div>
+      <!-- LINE 連結已放入按鈕 -->
+      <a
+        class="line-button"
+        href="https://lin.ee/7odxmu4"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        立即前往 LINE　↗
+      </a>
 
-      <p class="poster-note">
-        活動主視覺展示｜4.6 版本主題
+      <p class="line-note">
+        點擊按鈕將開啟外部 LINE 網址
       </p>
-
-      <section class="reward-card">
-        <p class="reward-label">EVENT INFORMATION</p>
-
-        <h2 class="reward-title">來自真珠的禮物</h2>
-
-        <p class="reward-description">
-          查看活動資訊與相關內容。<br>
-        </p>
-
-        <!-- 點擊後前往指定 LINE 連結 -->
-        <a
-          class="action-button"
-          href="https://lin.ee/7odxmu4"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          立即前往 LINE →
-        </a>
-      </section>
     </section>
 
-    <section class="info-card" id="event-details">
-      <h2>✦ 活動資訊</h2>
+  </section>
 
-      <p>
-        活動主題：來自真珠的禮物<br>
-        遊戲名稱：崩壞：星穹鐵道<br>
-        版本資訊：4.6 版本<br>
-      </p>
+  <section class="info">
+    <h2>✧ 活動資訊</h2>
 
-      <div class="notice">
-      </div>
-    </section>
+    <p>
+      活動主題：來自真珠的禮物<br>
+      遊戲名稱：崩壞：星穹鐵道<br>
+      版本資訊：4.6 版本<br>
+      活動時間與獎勵：請以官方公告為準
+    </p>
 
-    <footer>
-      FAN-MADE EVENT PAGE<br>
-     
-    </footer>
+    <div class="notice">
+      本頁為自製展示頁面，並非遊戲官方網站。
+      本頁不會直接發放遊戲道具或星瓊，
+      也請勿在非官方網站輸入遊戲帳號、密碼或驗證碼。
+    </div>
+  </section>
 
-  </main>
+  <footer>
+    A FAN-MADE EVENT DESIGN<br>
+    非官方活動展示頁面
+  </footer>
+
+</main>
 </body>
 </html>
