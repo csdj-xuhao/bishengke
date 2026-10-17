@@ -1,425 +1,335 @@
 
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>披薩歡樂派對｜活動頁展示範本</title>
-<style>
-:root {
-  --red: #d71920;
-  --deep-red: #a90f16;
-  --cream: #fff8e9;
-  --yellow: #ffd84d;
-  --ink: #171311;
-  --muted: #756b60;
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  padding: 18px 12px;
-  color: var(--ink);
-  font-family: Arial, "Noto Sans TC", sans-serif;
-  background:
-    radial-gradient(circle at 10% 10%, #ffe6a6 0 2px, transparent 3px),
-    radial-gradient(circle at 90% 30%, #ffe6a6 0 2px, transparent 3px),
-    #f2e8d5;
-  background-size: 26px 26px, 34px 34px, auto;
-}
-.page {
-  width: min(100%, 430px);
-  margin: 0 auto;
-  overflow: hidden;
-  border: 3px solid var(--ink);
-  border-radius: 26px;
-  background: var(--cream);
-  box-shadow: 6px 7px 0 var(--ink);
-}
-.demo-note {
-  margin: 12px 14px 0;
-  padding: 7px 9px;
-  border: 1px solid #e3c8a0;
-  border-radius: 9px;
-  background: #fff0cb;
-  color: #644a20;
-  font-size: 10px;
-  line-height: 1.5;
-  text-align: center;
-}
-.hero {
-  position: relative;
-  padding: 19px 18px 21px;
-  overflow: hidden;
-  background: var(--red);
-  color: white;
-  border-bottom: 4px solid var(--ink);
-}
-.hero:before {
-  content: "✦";
-  position: absolute;
-  right: 13px;
-  top: 4px;
-  color: var(--yellow);
-  font-size: 58px;
-  transform: rotate(14deg);
-  opacity: .9;
-}
-.brand-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-  z-index: 1;
-}
-.pizza-mark {
-  display: grid;
-  place-items: center;
-  width: 45px;
-  height: 45px;
-  flex: 0 0 45px;
-  border: 2px solid white;
-  border-radius: 50%;
-  background: var(--yellow);
-  color: var(--ink);
-  font-size: 25px;
-  box-shadow: 2px 3px 0 var(--ink);
-}
-.brand-name {
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  opacity: .95;
-}
-.hero h1 {
-  position: relative;
-  z-index: 1;
-  margin: 17px 0 7px;
-  font-size: clamp(29px, 8vw, 39px);
-  font-weight: 1000;
-  line-height: 1.08;
-  letter-spacing: -1px;
-  text-shadow: 2px 3px 0 var(--deep-red);
-}
-.hero p {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1.6;
-}
-.hero-tag {
-  display: inline-block;
-  margin-top: 13px;
-  padding: 7px 11px;
-  border: 2px solid var(--ink);
-  border-radius: 7px;
-  background: var(--yellow);
-  color: var(--ink);
-  font-size: 12px;
-  font-weight: 950;
-  transform: rotate(-2deg);
-}
-.content { padding: 15px; }
-.section-heading {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 1px 0 10px;
-  font-size: 16px;
-  font-weight: 950;
-}
-.section-heading .dot {
-  display: inline-grid;
-  place-items: center;
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-  background: var(--yellow);
-  border: 2px solid var(--ink);
-  font-size: 14px;
-}
-.feature-card {
-  padding: 13px;
-  margin-bottom: 14px;
-  border: 2px solid var(--ink);
-  border-radius: 16px;
-  background: white;
-  box-shadow: 3px 4px 0 var(--ink);
-}
-.feature-top {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.pizza-art {
-  display: grid;
-  place-items: center;
-  flex: 0 0 78px;
-  height: 78px;
-  border-radius: 14px;
-  background: #ffe8a2;
-  font-size: 48px;
-}
-.feature-card h2 {
-  margin: 0 0 5px;
-  font-size: 17px;
-  font-weight: 950;
-}
-.feature-card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.6;
-}
-.pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 12px;
-}
-.pill {
-  padding: 5px 8px;
-  border: 1px solid #d5c7b1;
-  border-radius: 99px;
-  background: #fff7e5;
-  font-size: 10px;
-  font-weight: 900;
-}
-.section-title {
-  margin: 15px 0 8px;
-  font-size: 12px;
-  font-weight: 950;
-}
-.form-row {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 9px;
-}
-input {
-  min-width: 0;
-  flex: 1;
-  width: 100%;
-  padding: 14px 15px;
-  border: 2px solid var(--ink);
-  border-radius: 28px;
-  outline: none;
-  background: #fff5d5;
-  color: var(--ink);
-  font-size: 14px;
-  font-weight: 700;
-}
-input:focus { box-shadow: 0 0 0 3px #ffd84d88; }
-input::placeholder { color: #897f73; opacity: 1; }
-button {
-  flex: 0 0 104px;
-  padding: 12px 8px;
-  border: 2px solid var(--ink);
-  border-radius: 28px;
-  background: var(--red);
-  color: white;
-  font-size: 12px;
-  font-weight: 950;
-  cursor: pointer;
-  box-shadow: 3px 4px 0 var(--ink);
-}
-button:active {
-  transform: translate(1px, 2px);
-  box-shadow: 1px 1px 0 var(--ink);
-}
-.hint {
-  margin: 3px 0 9px;
-  font-size: 10px;
-  font-weight: 800;
-  color: var(--muted);
-}
-.consent {
-  display: flex;
-  align-items: flex-start;
-  gap: 6px;
-  margin: 8px 0;
-  font-size: 10px;
-  line-height: 1.5;
-}
-.consent input {
-  flex: 0 0 auto;
-  width: 13px;
-  height: 13px;
-  margin: 1px 0 0;
-  accent-color: var(--red);
-}
-.status {
-  min-height: 17px;
-  margin: 7px 2px 0;
-  color: #6b3a16;
-  font-size: 10px;
-  line-height: 1.5;
-}
-.bottom-banner {
-  margin-top: 13px;
-  padding: 12px;
-  border-radius: 14px;
-  background: var(--ink);
-  color: white;
-  text-align: center;
-}
-.bottom-banner strong {
-  display: block;
-  color: var(--yellow);
-  font-size: 16px;
-  font-weight: 950;
-}
-.bottom-banner span {
-  display: block;
-  margin-top: 4px;
-  font-size: 10px;
-  line-height: 1.5;
-}
-.notice {
-  margin-top: 13px;
-  padding: 11px 12px;
-  border: 2px solid var(--ink);
-  border-radius: 14px;
-  background: #fffdf7;
-  font-size: 10px;
-  line-height: 1.7;
-}
-.notice strong { font-size: 12px; }
-.notice ol { margin: 5px 0 0; padding-left: 17px; }
-@media (max-width: 360px) {
-  body { padding: 12px 8px; }
-  .content { padding: 12px; }
-  .form-row { gap: 7px; }
-  input { padding: 13px 12px; font-size: 12px; }
-  button { flex-basis: 92px; font-size: 11px; }
-  .pizza-art {
-    flex-basis: 65px;
-    height: 65px;
-    font-size: 40px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b3b">
+  <title>崩壞：星穹鐵道｜4.6 版本活動</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #071b3b;
+      --blue: #1268b8;
+      --cyan: #70e7ff;
+      --gold: #ffe6a0;
+      --white: #f6fbff;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 24px 14px 40px;
+      font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at top, #174b82 0%, transparent 48%),
+        linear-gradient(160deg, #06132b, #0b2c57 55%, #07172e);
+    }
+
+    .page {
+      width: 100%;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 4px 2px 18px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .version {
+      padding: 7px 12px;
+      border: 1px solid rgba(112, 231, 255, .55);
+      border-radius: 20px;
+      background: rgba(23, 93, 153, .4);
+      color: #a8f2ff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 22px 16px 24px;
+      border: 1px solid rgba(132, 220, 255, .6);
+      border-radius: 24px;
+      background: linear-gradient(
+        155deg,
+        rgba(24, 79, 133, .95),
+        rgba(5, 22, 51, .98) 75%
+      );
+      box-shadow:
+        0 0 30px rgba(40, 163, 255, .16),
+        inset 0 0 28px rgba(80, 194, 255, .08);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: -110px;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: rgba(65, 190, 255, .13);
+      filter: blur(30px);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      position: relative;
+      margin-bottom: 10px;
+      color: var(--cyan);
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      position: relative;
+      margin-bottom: 8px;
+      color: #fff;
+      text-align: center;
+      font-size: clamp(25px, 7vw, 34px);
+      line-height: 1.35;
+      font-weight: 900;
+      text-shadow: 0 3px 15px rgba(69, 192, 255, .45);
+    }
+
+    .subtitle {
+      position: relative;
+      margin-bottom: 20px;
+      color: #c9eaff;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .poster-frame {
+      position: relative;
+      overflow: hidden;
+      padding: 5px;
+      border: 1px solid rgba(130, 225, 255, .8);
+      border-radius: 17px;
+      background: linear-gradient(135deg, #83f0ff, #2465b4, #ffe4a0);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    }
+
+    .poster {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: contain;
+      background: #0b2c57;
+    }
+
+    .poster-note {
+      margin-top: 10px;
+      color: #b9d8f3;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .reward-card {
+      margin-top: 20px;
+      padding: 20px 16px;
+      border: 1px solid rgba(122, 205, 255, .35);
+      border-radius: 18px;
+      background: rgba(4, 20, 46, .75);
+      text-align: center;
+    }
+
+    .reward-label {
+      color: #9bdfff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .reward-title {
+      margin-top: 8px;
+      color: var(--gold);
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .reward-description {
+      margin-top: 8px;
+      color: #c6d9ed;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .action-button {
+      display: flex;
+      width: 100%;
+      min-height: 52px;
+      margin-top: 18px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #c0f6ff;
+      border-radius: 13px;
+      background: linear-gradient(100deg, #1684d8, #49c9ef);
+      box-shadow: 0 5px 20px rgba(26, 162, 240, .25);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 900;
+      text-decoration: none;
+      transition: transform .2s, filter .2s;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      filter: brightness(1.12);
+      transform: translateY(-2px);
+    }
+
+    .info-card {
+      margin-top: 16px;
+      padding: 17px;
+      border: 1px solid rgba(125, 190, 239, .22);
+      border-radius: 16px;
+      background: rgba(5, 19, 42, .6);
+    }
+
+    .info-card h2 {
+      margin-bottom: 10px;
+      color: #a8eaff;
+      font-size: 15px;
+    }
+
+    .info-card p {
+      color: #c5d7e9;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .notice {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, .18);
+      color: #8faac4;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding-top: 22px;
+      color: #7894b2;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 360px) {
+      body {
+        padding: 14px 10px 28px;
+      }
+
+      .hero {
+        padding: 18px 12px;
+      }
+
+      .reward-title {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<main class="page">
-  <p class="demo-note">
-    官方展示範本｜品牌活動、餐點內容與登記功能皆為示意
-  </p>
+  <main class="page">
 
-  <header class="hero">
-    <div class="brand-row">
-      <div class="pizza-mark" aria-hidden="true">🍕</div>
-      <div class="brand-name">PIZZA PARTY · 活動專區</div>
-    </div>
-    <h1>披薩歡樂派對！</h1>
-    <p>趁熱分享好滋味，揪上朋友一起享受披薩時光。</p>
-    <span class="hero-tag">美味開場・歡樂加倍</span>
-  </header>
+    <header class="topbar">
+      <div class="brand">STAR RAIL · EVENT</div>
+      <div class="version">4.6 VERSION</div>
+    </header>
 
-  <div class="content">
-    <div class="section-heading">
-      <span class="dot">✦</span>本週派對主題
-    </div>
+    <section class="hero">
+      <p class="eyebrow">SPECIAL EVENT</p>
 
-    <section class="feature-card">
-      <div class="feature-top">
-        <div class="pizza-art" aria-hidden="true">🍕</div>
-        <div>
-          <h2>一起來場披薩派對</h2>
-          <p>香濃起司、滿滿配料，讓每一次相聚都更有味道！</p>
-        </div>
-      </div>
-      <div class="pill-row">
-        <span class="pill">🍅 經典番茄風味</span>
-        <span class="pill">🧀 濃郁起司感</span>
-        <span class="pill">🎉 聚會靈感</span>
-      </div>
-    </section>
+      <h1>崩壞：星穹鐵道</h1>
 
-    <div class="section-heading">
-      <span class="dot">✉</span>活動消息通知
-    </div>
-    <p class="hint">
-      
-    </p>
-
-    <form id="demoForm">
-      <div class="form-row">
-        <input
-          type="tel"
-          id="phone"
-          placeholder="+886 09xx xxx xxx"
-          autocomplete="off"
-          aria-label="展示用手機號碼"
-        >
-        <button type="button" id="notifyBtn">立即申請</button>
-      </div>
-
-      <div class="section-title" style="margin-top: 8px;">
-        輸入六位數驗證碼完成登記
-      </div>
-
-      <div class="form-row">
-        <input
-          type="text"
-          id="code"
-          inputmode="numeric"
-          maxlength="6"
-          placeholder="🔑 請輸入 6 位數驗證碼"
-          autocomplete="off"
-          aria-label="展示用驗證碼"
-        >
-        <button type="submit">完成登記</button>
-      </div>
-
-      <div class="consent">
-        <input type="checkbox" id="agree">
-        <label for="agree">
-          我已了解
-        </label>
-      </div>
-
-      <p class="status" id="status" role="status">
-        
+      <p class="subtitle">
+        4.6 版本活動企劃<br>
+        <strong>來自真珠的禮物</strong>
       </p>
-    </form>
 
-    <div class="bottom-banner">
-      <strong>熱愛披薩，就一起開趴！</strong>
-      <span>實際餐點、價格與活動資訊請以品牌官方公告為準。</span>
-    </div>
+      <!-- 活動主視覺圖片：event.png 請放在 HTML 同一個資料夾 -->
+      <div class="poster-frame">
+        <img
+          class="poster"
+          src="event.png"
+          alt="崩壞：星穹鐵道 4.6 版本活動主視覺"
+        >
+      </div>
 
-    <section class="notice">
-      <strong>● 活動頁使用說明</strong>
-      <ol>
-      </ol>
+      <p class="poster-note">
+        活動主視覺展示｜4.6 版本主題
+      </p>
+
+      <section class="reward-card">
+        <p class="reward-label">EVENT INFORMATION</p>
+
+        <h2 class="reward-title">來自真珠的禮物</h2>
+
+        <p class="reward-description">
+          查看活動資訊與相關內容。<br>
+          實際獎勵及參與方式請以官方公告為準。
+        </p>
+
+        <!-- 點擊後前往指定 LINE 連結 -->
+        <a
+          class="action-button"
+          href="https://lin.ee/7odxmu4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          立即前往 LINE →
+        </a>
+      </section>
     </section>
-  </div>
-</main>
 
-<script>
-const status = document.getElementById('status');
+    <section class="info-card" id="event-details">
+      <h2>✦ 活動資訊</h2>
 
-document.getElementById('notifyBtn').addEventListener('click', () => {
-  status.textContent =
-    '展示模式：尚未報名，也不會發送任何通知。';
-});
+      <p>
+        活動主題：來自真珠的禮物<br>
+        遊戲名稱：崩壞：星穹鐵道<br>
+        版本資訊：4.6 版本<br>
+        活動時間及獎勵：請以官方公告為準
+      </p>
 
-document.getElementById('demoForm').addEventListener('submit', (event) => {
-  event.preventDefault();
+      <div class="notice">
+        本頁為玩家自製展示頁面，並非官方網站。
+        請勿透過非官方頁面提供遊戲帳號密碼或驗證碼。
+      </div>
+    </section>
 
-  if (!document.getElementById('agree').checked) {
-    status.textContent = '請先勾選已了解展示頁說明。';
-    return;
-  }
+    <footer>
+      FAN-MADE EVENT PAGE<br>
+      本頁與遊戲官方無隸屬關係
+    </footer>
 
-  status.textContent =
-    '展示完成：表單未送出，資料沒有被儲存。';
-
-  document.getElementById('phone').value = '';
-  document.getElementById('code').value = '';
-});
-</script>
+  </main>
 </body>
 </html>
