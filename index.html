@@ -1,427 +1,451 @@
-```html
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080d22">
-<title>崩壞 星穹鐵道｜星際活動專區</title>
-<meta name="description" content="星穹鐵道主題活動資訊頁面">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d22">
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <title>崩壞：星穹鐵道｜星際活動專區</title>
+  <meta name="description" content="星穹鐵道主題活動資訊頁面，探索星際旅程，查看活動相關內容。">
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <!-- 社群分享預覽設定：請替換成你自己的公開網址 -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="星際活動專區｜星穹鐵道">
+  <meta property="og:description" content="相遇在浩瀚星海，開啟全新的旅程。查看活動資訊與相關內容。">
+  <meta property="og:url" content="https://你的網域/">
+  <meta property="og:image" content="https://你的網域/hero-bg.jpg">
+  <meta property="og:image:alt" content="星際活動專區主視覺">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="星際活動專區｜星穹鐵道">
+  <meta name="twitter:description" content="查看星際活動資訊與相關內容。">
+  <meta name="twitter:image" content="https://你的網域/hero-bg.jpg">
 
-html {
-  scroll-behavior: smooth;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-body {
-  margin: 0;
-  font-family: 'Noto Sans TC', sans-serif;
-  color: #f4f5ff;
-  background:
-    radial-gradient(ellipse at 50% 10%, #243d78 0%, transparent 45%),
-    linear-gradient(180deg, #101b3d, #080d22 55%, #050817);
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.hero {
-  position: relative;
-  min-height: 540px;
-  overflow: hidden;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(5, 10, 30, .12),
-      rgba(5, 10, 30, .30) 45%,
-      #080d22 100%
-    ),
-    url('./hero-bg.jpg') center 28% / cover no-repeat;
-}
+    body {
+      margin: 0;
+      font-family: 'Noto Sans TC', sans-serif;
+      color: #f4f5ff;
+      background:
+        radial-gradient(ellipse at 50% 10%, #243d78 0%, transparent 45%),
+        linear-gradient(180deg, #101b3d, #080d22 55%, #050817);
+    }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 20% 20%, #8dbbff55 0 1px, transparent 2px),
-    radial-gradient(circle at 80% 35%, #ffffff66 0 1px, transparent 2px),
-    radial-gradient(circle at 65% 15%, #b8a5ff66 0 1px, transparent 2px);
-  background-size: 95px 100px, 125px 130px, 155px 140px;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-.nav,
-.hero-content,
-main {
-  position: relative;
-  z-index: 1;
-}
+    .hero {
+      position: relative;
+      min-height: 540px;
+      overflow: hidden;
+      background-color: #101b3d;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(5, 10, 30, .12),
+          rgba(5, 10, 30, .30) 45%,
+          #080d22 100%
+        ),
+        url('./hero-bg.jpg');
+      background-position: center, center 28%;
+      background-size: cover, cover;
+      background-repeat: no-repeat;
+    }
 
-.nav {
-  max-width: 580px;
-  margin: auto;
-  padding: 26px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 20%, #8dbbff55 0 1px, transparent 2px),
+        radial-gradient(circle at 80% 35%, #ffffff66 0 1px, transparent 2px),
+        radial-gradient(circle at 65% 15%, #b8a5ff66 0 1px, transparent 2px);
+      background-size: 95px 100px, 125px 130px, 155px 140px;
+    }
 
-.logo {
-  font-size: 24px;
-  font-weight: 900;
-  letter-spacing: 5px;
-  text-shadow: 0 0 22px #7aaaff88;
-}
+    .nav,
+    .hero-content,
+    main {
+      position: relative;
+      z-index: 1;
+    }
 
-.logo-en {
-  margin-top: 4px;
-  color: #b8c9ff;
-  font-size: 9px;
-  letter-spacing: 3px;
-}
+    .nav {
+      max-width: 580px;
+      margin: auto;
+      padding: 26px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
 
-.archive {
-  color: #d7e2ff;
-  font-size: 10px;
-  letter-spacing: 3px;
-}
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 5px;
+      text-shadow: 0 0 22px #7aaaff88;
+    }
 
-.hero-content {
-  max-width: 580px;
-  margin: auto;
-  padding: 180px 20px 55px;
-  text-align: center;
-}
+    .logo-en {
+      margin-top: 4px;
+      color: #b8c9ff;
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
 
-.eyebrow {
-  color: #c5d5ff;
-  font-size: 11px;
-  letter-spacing: 4px;
-}
+    .archive {
+      color: #d7e2ff;
+      font-size: 10px;
+      letter-spacing: 3px;
+      white-space: nowrap;
+    }
 
-h1 {
-  margin: 16px 0;
-  font-size: clamp(32px, 7vw, 48px);
-  font-weight: 900;
-  letter-spacing: 4px;
-  text-shadow: 0 0 28px #779eff99;
-}
+    .hero-content {
+      max-width: 580px;
+      margin: auto;
+      padding: 180px 20px 55px;
+      text-align: center;
+    }
 
-.subtitle {
-  color: #e0e7ff;
-  font-size: 14px;
-  line-height: 2;
-}
+    .eyebrow {
+      color: #c5d5ff;
+      font-size: 11px;
+      letter-spacing: 4px;
+    }
 
-main {
-  width: min(100% - 32px, 540px);
-  margin: -5px auto 0;
-  padding-bottom: 35px;
-}
+    h1 {
+      margin: 16px 0;
+      font-size: clamp(32px, 7vw, 48px);
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-shadow: 0 0 28px #779eff99;
+    }
 
-.panel {
-  padding: 23px;
-  border: 1px solid #a8c6ff55;
-  border-radius: 18px;
-  background: linear-gradient(
-    140deg,
-    rgba(37, 57, 104, .82),
-    rgba(9, 16, 42, .96)
-  );
-  box-shadow: 0 14px 40px #00000035;
-  backdrop-filter: blur(12px);
-}
+    .subtitle {
+      color: #e0e7ff;
+      font-size: 14px;
+      line-height: 2;
+    }
 
-.event-heading {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+    main {
+      width: min(100% - 32px, 540px);
+      margin: -5px auto 0;
+      padding-bottom: 35px;
+    }
 
-.icon-box {
-  width: 62px;
-  height: 62px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  border: 1px solid #a9c9ff66;
-  border-radius: 14px;
-  background: #91b9ff15;
-  color: #d7e6ff;
-  font-size: 32px;
-}
+    .panel {
+      padding: 23px;
+      border: 1px solid #a8c6ff55;
+      border-radius: 18px;
+      background: linear-gradient(
+        140deg,
+        rgba(37, 57, 104, .82),
+        rgba(9, 16, 42, .96)
+      );
+      box-shadow: 0 14px 40px #00000035;
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
 
-.label {
-  color: #a9c9ff;
-  font-size: 10px;
-  letter-spacing: 2px;
-}
+    .event-heading {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
-h2 {
-  margin: 5px 0;
-  font-size: 20px;
-}
+    .icon-box {
+      width: 62px;
+      height: 62px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border: 1px solid #a9c9ff66;
+      border-radius: 14px;
+      background: #91b9ff15;
+      color: #d7e6ff;
+      font-size: 32px;
+    }
 
-.desc {
-  margin: 5px 0 0;
-  color: #c4cce2;
-  font-size: 12px;
-  line-height: 1.8;
-}
+    .label {
+      color: #a9c9ff;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
 
-.line {
-  height: 1px;
-  margin: 20px 0;
-  background: #c3d4ff25;
-}
+    h2 {
+      margin: 5px 0;
+      font-size: 20px;
+    }
 
-.status {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  color: #c4cce2;
-  font-size: 13px;
-}
+    .desc {
+      margin: 5px 0 0;
+      color: #c4cce2;
+      font-size: 12px;
+      line-height: 1.8;
+    }
 
-.status-value {
-  color: #b8d9ff;
-}
+    .line {
+      height: 1px;
+      margin: 20px 0;
+      background: #c3d4ff25;
+    }
 
-.cta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  width: 100%;
-  min-height: 58px;
-  margin-top: 22px;
-  padding: 15px 18px;
-  border: 1px solid #ffffff99;
-  border-radius: 999px;
-  background: linear-gradient(110deg, #f2f5ff, #9bc5ff, #d8d4ff);
-  color: #111d43;
-  font-weight: 900;
-  font-size: 15px;
-  letter-spacing: 1px;
-  box-shadow: 0 0 25px #7ba8ff35;
-  transition: .2s;
-}
+    .status {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: #c4cce2;
+      font-size: 13px;
+    }
 
-.cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 32px #8bb8ff70;
-}
+    .status-value {
+      color: #b8d9ff;
+    }
 
-.hint {
-  margin-top: 13px;
-  text-align: center;
-  color: #9ca9ca;
-  font-size: 11px;
-  line-height: 1.8;
-}
+    .cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      min-height: 58px;
+      margin-top: 22px;
+      padding: 15px 18px;
+      border: 1px solid #ffffff99;
+      border-radius: 999px;
+      background: linear-gradient(110deg, #f2f5ff, #9bc5ff, #d8d4ff);
+      color: #111d43;
+      font-weight: 900;
+      font-size: 15px;
+      letter-spacing: 1px;
+      box-shadow: 0 0 25px #7ba8ff35;
+      transition: transform .2s, box-shadow .2s;
+    }
 
-.features {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 27px;
-}
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 32px #8bb8ff70;
+    }
 
-.feature {
-  min-height: 112px;
-  padding: 18px 5px;
-  text-align: center;
-  border: 1px solid #9dbbff44;
-  border-radius: 13px;
-  background: linear-gradient(145deg, #17264a, #0b1129);
-}
+    .cta:focus-visible {
+      outline: 3px solid white;
+      outline-offset: 4px;
+    }
 
-.feature-icon {
-  color: #c4d9ff;
-  font-size: 26px;
-}
+    .hint {
+      margin-top: 13px;
+      text-align: center;
+      color: #9ca9ca;
+      font-size: 11px;
+      line-height: 1.8;
+    }
 
-.feature p {
-  margin: 10px 0 0;
-  font-size: 12px;
-}
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 27px;
+    }
 
-.feature small {
-  display: block;
-  margin-top: 5px;
-  color: #94b9ff;
-  font-size: 8px;
-  letter-spacing: 2px;
-}
+    .feature {
+      min-height: 112px;
+      padding: 18px 5px;
+      text-align: center;
+      border: 1px solid #9dbbff44;
+      border-radius: 13px;
+      background: linear-gradient(145deg, #17264a, #0b1129);
+    }
 
-footer {
-  padding: 38px 10px 15px;
-  text-align: center;
-}
+    .feature-icon {
+      color: #c4d9ff;
+      font-size: 26px;
+    }
 
-.footer-logo {
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: 5px;
-}
+    .feature p {
+      margin: 10px 0 0;
+      font-size: 12px;
+    }
 
-.footer-en {
-  margin-top: 7px;
-  color: #8f9fc5;
-  font-size: 9px;
-  letter-spacing: 3px;
-}
+    .feature small {
+      display: block;
+      margin-top: 5px;
+      color: #94b9ff;
+      font-size: 8px;
+      letter-spacing: 2px;
+    }
 
-.disclaimer {
-  margin-top: 22px;
-  color: #7f8baa;
-  font-size: 10px;
-  line-height: 1.9;
-}
+    footer {
+      padding: 38px 10px 15px;
+      text-align: center;
+    }
 
-@media (max-width: 480px) {
-  .hero {
-    min-height: 510px;
-    background-position: center 25%;
-  }
+    .footer-logo {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 5px;
+    }
 
-  .hero-content {
-    padding-top: 175px;
-  }
+    .footer-en {
+      margin-top: 7px;
+      color: #8f9fc5;
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
 
-  .panel {
-    padding: 19px;
-  }
+    .disclaimer {
+      margin-top: 22px;
+      color: #7f8baa;
+      font-size: 10px;
+      line-height: 1.9;
+    }
 
-  .logo {
-    font-size: 21px;
-  }
+    @media (max-width: 480px) {
+      .hero {
+        min-height: 510px;
+        background-position: center, center 25%;
+      }
 
-  .archive {
-    font-size: 9px;
-  }
+      .hero-content {
+        padding-top: 175px;
+      }
 
-  .features {
-    gap: 8px;
-  }
+      .panel {
+        padding: 19px;
+      }
 
-  .feature {
-    min-height: 105px;
-  }
+      .logo {
+        font-size: 21px;
+      }
 
-  .cta {
-    font-size: 14px;
-  }
-}
+      .archive {
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+      .features {
+        gap: 8px;
+      }
 
-  .cta {
-    transition: none;
-  }
-}
-</style>
+      .feature {
+        min-height: 105px;
+      }
+
+      .cta {
+        font-size: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .cta {
+        transition: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-<section class="hero">
-  <header class="nav">
-    <div>
-      <div class="logo">星穹鐵道</div>
-      <div class="logo-en">HONKAI: STAR RAIL</div>
-    </div>
-    <span class="archive">EVENT ARCHIVE ✦</span>
-  </header>
-
-  <div class="hero-content">
-    <p class="eyebrow">TRAILBLAZE · COSMIC JOURNEY</p>
-    <h1>星際活動專區</h1>
-    <p class="subtitle">
-      相遇在浩瀚星海，開啟全新的旅程<br>
-      查看活動資訊與相關內容
-    </p>
-  </div>
-</section>
-
-<main>
-
-  <section class="panel">
-    <div class="event-heading">
-      <div class="icon-box">✦</div>
+  <section class="hero">
+    <header class="nav">
       <div>
-        <div class="label">EVENT INFORMATION</div>
-        <h2>活動資訊專區</h2>
-        <p class="desc">探索星際旅程，查看活動相關資訊</p>
+        <div class="logo">星穹鐵道</div>
+        <div class="logo-en">HONKAI: STAR RAIL</div>
       </div>
-    </div>
+      <span class="archive">EVENT ARCHIVE ✦</span>
+    </header>
 
-    <div class="line"></div>
-
-    <div class="status">
-      <span>專區資訊</span>
-      <span class="status-value">✦ 星際探索</span>
-    </div>
-  </section>
-
-  <a
-    class="cta"
-    href="https://lin.ee/TNdtqmm"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="前往 LINE 活動專區"
-  >
-    <span>前往 LINE 活動專區</span>
-    <span aria-hidden="true">↗</span>
-  </a>
-
-  <p class="hint">
-    點擊按鈕將開啟外部 LINE 頁面
-  </p>
-
-  <section class="features">
-    <div class="feature">
-      <div class="feature-icon">✧</div>
-      <p>活動內容</p>
-      <small>EVENT</small>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">✦</div>
-      <p>最新資訊</p>
-      <small>NEWS</small>
-    </div>
-
-    <div class="feature">
-      <div class="feature-icon">♧</div>
-      <p>星際旅程</p>
-      <small>STAR RAIL</small>
+    <div class="hero-content">
+      <p class="eyebrow">TRAILBLAZE · COSMIC JOURNEY</p>
+      <h1>星際活動專區</h1>
+      <p class="subtitle">
+        相遇在浩瀚星海，開啟全新的旅程<br>
+        查看活動資訊與相關內容
+      </p>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-logo">星穹鐵道</div>
-    <div class="footer-en">HONKAI: STAR RAIL</div>
-    <p class="disclaimer">
-      本頁官方設計頁面。<br>
-     
+  <main>
+    <section class="panel">
+      <div class="event-heading">
+        <div class="icon-box" aria-hidden="true">✦</div>
+        <div>
+          <div class="label">EVENT INFORMATION</div>
+          <h2>活動資訊專區</h2>
+          <p class="desc">探索星際旅程，查看活動相關資訊</p>
+        </div>
+      </div>
+
+      <div class="line"></div>
+
+      <div class="status">
+        <span>專區資訊</span>
+        <span class="status-value">✦ 星際探索</span>
+      </div>
+    </section>
+
+    <a
+      class="cta"
+      href="https://lin.ee/TNdtqmm"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="前往 LINE 活動專區"
+    >
+      <span>前往 LINE 活動專區</span>
+      <span aria-hidden="true">↗</span>
+    </a>
+
+    <p class="hint">
+      點擊按鈕將開啟外部 LINE 頁面
     </p>
-  </footer>
 
-</main>
+    <section class="features" aria-label="專區特色">
+      <div class="feature">
+        <div class="feature-icon" aria-hidden="true">✧</div>
+        <p>活動內容</p>
+        <small>EVENT</small>
+      </div>
 
+      <div class="feature">
+        <div class="feature-icon" aria-hidden="true">✦</div>
+        <p>最新資訊</p>
+        <small>NEWS</small>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon" aria-hidden="true">♧</div>
+        <p>星際旅程</p>
+        <small>STAR RAIL</small>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-logo">星穹鐵道</div>
+      <div class="footer-en">HONKAI: STAR RAIL</div>
+      <p class="disclaimer">
+        本頁為非官方粉絲製作頁面，與 HoYoverse 無隸屬關係。<br>
+        遊戲名稱及相關商標歸其各自權利人所有。
+      </p>
+    </footer>
+  </main>
 </body>
 </html>
-```
