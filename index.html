@@ -2,450 +2,331 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d22">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080713">
+<title>崩壞：星穹鐵道｜星際檔案・特別企劃</title>
+<meta name="description" content="踏上星穹列車，探索星海中的角色、旅程與活動情報。">
 
-  <title>崩壞：星穹鐵道｜星際活動專區</title>
-  <meta name="description" content="星穹鐵道主題活動資訊頁面，探索星際旅程，查看活動相關內容。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="崩壞：星穹鐵道｜星際檔案">
+<meta property="og:description" content="星海已經呼喚你。查看旅程情報與特別企劃。">
+<meta property="og:image" content="https://你的網域/hsr-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://你的網域/">
+<meta property="og:site_name" content="星際檔案・粉絲主題頁">
 
-  <!-- 社群分享預覽設定：請替換成你自己的公開網址 -->
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_TW">
-  <meta property="og:title" content="星際活動專區｜星穹鐵道">
-  <meta property="og:description" content="相遇在浩瀚星海，開啟全新的旅程。查看活動資訊與相關內容。">
-  <meta property="og:url" content="https://你的網域/">
-  <meta property="og:image" content="https://你的網域/hero-bg.jpg">
-  <meta property="og:image:alt" content="星際活動專區主視覺">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="星際活動專區｜星穹鐵道">
-  <meta name="twitter:description" content="查看星際活動資訊與相關內容。">
-  <meta name="twitter:image" content="https://你的網域/hero-bg.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="崩壞：星穹鐵道｜星際檔案">
+<meta name="twitter:description" content="星海已經呼喚你。查看旅程情報與特別企劃。">
+<meta name="twitter:image" content="https://你的網域/hsr-og.jpg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Noto Sans TC', sans-serif;
-      color: #f4f5ff;
-      background:
-        radial-gradient(ellipse at 50% 10%, #243d78 0%, transparent 45%),
-        linear-gradient(180deg, #101b3d, #080d22 55%, #050817);
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 540px;
-      overflow: hidden;
-      background-color: #101b3d;
-      background-image:
-        linear-gradient(
-          to bottom,
-          rgba(5, 10, 30, .12),
-          rgba(5, 10, 30, .30) 45%,
-          #080d22 100%
-        ),
-        url('./hero-bg.jpg');
-      background-position: center, center 28%;
-      background-size: cover, cover;
-      background-repeat: no-repeat;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 20% 20%, #8dbbff55 0 1px, transparent 2px),
-        radial-gradient(circle at 80% 35%, #ffffff66 0 1px, transparent 2px),
-        radial-gradient(circle at 65% 15%, #b8a5ff66 0 1px, transparent 2px);
-      background-size: 95px 100px, 125px 130px, 155px 140px;
-    }
-
-    .nav,
-    .hero-content,
-    main {
-      position: relative;
-      z-index: 1;
-    }
-
-    .nav {
-      max-width: 580px;
-      margin: auto;
-      padding: 26px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: 5px;
-      text-shadow: 0 0 22px #7aaaff88;
-    }
-
-    .logo-en {
-      margin-top: 4px;
-      color: #b8c9ff;
-      font-size: 9px;
-      letter-spacing: 3px;
-    }
-
-    .archive {
-      color: #d7e2ff;
-      font-size: 10px;
-      letter-spacing: 3px;
-      white-space: nowrap;
-    }
-
-    .hero-content {
-      max-width: 580px;
-      margin: auto;
-      padding: 180px 20px 55px;
-      text-align: center;
-    }
-
-    .eyebrow {
-      color: #c5d5ff;
-      font-size: 11px;
-      letter-spacing: 4px;
-    }
-
-    h1 {
-      margin: 16px 0;
-      font-size: clamp(32px, 7vw, 48px);
-      font-weight: 900;
-      letter-spacing: 4px;
-      text-shadow: 0 0 28px #779eff99;
-    }
-
-    .subtitle {
-      color: #e0e7ff;
-      font-size: 14px;
-      line-height: 2;
-    }
-
-    main {
-      width: min(100% - 32px, 540px);
-      margin: -5px auto 0;
-      padding-bottom: 35px;
-    }
-
-    .panel {
-      padding: 23px;
-      border: 1px solid #a8c6ff55;
-      border-radius: 18px;
-      background: linear-gradient(
-        140deg,
-        rgba(37, 57, 104, .82),
-        rgba(9, 16, 42, .96)
-      );
-      box-shadow: 0 14px 40px #00000035;
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
-    }
-
-    .event-heading {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .icon-box {
-      width: 62px;
-      height: 62px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      border: 1px solid #a9c9ff66;
-      border-radius: 14px;
-      background: #91b9ff15;
-      color: #d7e6ff;
-      font-size: 32px;
-    }
-
-    .label {
-      color: #a9c9ff;
-      font-size: 10px;
-      letter-spacing: 2px;
-    }
-
-    h2 {
-      margin: 5px 0;
-      font-size: 20px;
-    }
-
-    .desc {
-      margin: 5px 0 0;
-      color: #c4cce2;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .line {
-      height: 1px;
-      margin: 20px 0;
-      background: #c3d4ff25;
-    }
-
-    .status {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      color: #c4cce2;
-      font-size: 13px;
-    }
-
-    .status-value {
-      color: #b8d9ff;
-    }
-
-    .cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      width: 100%;
-      min-height: 58px;
-      margin-top: 22px;
-      padding: 15px 18px;
-      border: 1px solid #ffffff99;
-      border-radius: 999px;
-      background: linear-gradient(110deg, #f2f5ff, #9bc5ff, #d8d4ff);
-      color: #111d43;
-      font-weight: 900;
-      font-size: 15px;
-      letter-spacing: 1px;
-      box-shadow: 0 0 25px #7ba8ff35;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 32px #8bb8ff70;
-    }
-
-    .cta:focus-visible {
-      outline: 3px solid white;
-      outline-offset: 4px;
-    }
-
-    .hint {
-      margin-top: 13px;
-      text-align: center;
-      color: #9ca9ca;
-      font-size: 11px;
-      line-height: 1.8;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 27px;
-    }
-
-    .feature {
-      min-height: 112px;
-      padding: 18px 5px;
-      text-align: center;
-      border: 1px solid #9dbbff44;
-      border-radius: 13px;
-      background: linear-gradient(145deg, #17264a, #0b1129);
-    }
-
-    .feature-icon {
-      color: #c4d9ff;
-      font-size: 26px;
-    }
-
-    .feature p {
-      margin: 10px 0 0;
-      font-size: 12px;
-    }
-
-    .feature small {
-      display: block;
-      margin-top: 5px;
-      color: #94b9ff;
-      font-size: 8px;
-      letter-spacing: 2px;
-    }
-
-    footer {
-      padding: 38px 10px 15px;
-      text-align: center;
-    }
-
-    .footer-logo {
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: 5px;
-    }
-
-    .footer-en {
-      margin-top: 7px;
-      color: #8f9fc5;
-      font-size: 9px;
-      letter-spacing: 3px;
-    }
-
-    .disclaimer {
-      margin-top: 22px;
-      color: #7f8baa;
-      font-size: 10px;
-      line-height: 1.9;
-    }
-
-    @media (max-width: 480px) {
-      .hero {
-        min-height: 510px;
-        background-position: center, center 25%;
-      }
-
-      .hero-content {
-        padding-top: 175px;
-      }
-
-      .panel {
-        padding: 19px;
-      }
-
-      .logo {
-        font-size: 21px;
-      }
-
-      .archive {
-        font-size: 9px;
-        letter-spacing: 2px;
-      }
-
-      .features {
-        gap: 8px;
-      }
-
-      .feature {
-        min-height: 105px;
-      }
-
-      .cta {
-        font-size: 14px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .cta {
-        transition: none;
-      }
-    }
-  </style>
+<style>
+:root{
+  --bg:#080713;
+  --ink:#f8f4ff;
+  --muted:#b0a9c9;
+  --violet:#c7a5ff;
+  --cyan:#83e9ff;
+  --pink:#ffb6df;
+  --line:rgba(223,211,255,.17);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{
+  margin:0;min-height:100vh;color:var(--ink);
+  font-family:'Noto Sans TC',sans-serif;
+  background:
+    radial-gradient(ellipse at 80% 12%,rgba(108,65,190,.24),transparent 35%),
+    radial-gradient(ellipse at 15% 60%,rgba(35,112,165,.16),transparent 40%),
+    #080713;
+  overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.45;
+  background-image:
+    radial-gradient(1px 1px at 8% 18%,#fff 99%,transparent),
+    radial-gradient(1px 1px at 73% 11%,#b7eaff 99%,transparent),
+    radial-gradient(2px 2px at 51% 37%,#fff 99%,transparent),
+    radial-gradient(1px 1px at 89% 68%,#e7c5ff 99%,transparent),
+    radial-gradient(1px 1px at 28% 77%,#fff 99%,transparent),
+    radial-gradient(1px 1px at 43% 91%,#b7eaff 99%,transparent);
+  background-size:370px 300px;z-index:0;
+}
+.aurora{
+  position:fixed;inset:-30% -10% auto;height:75vh;
+  pointer-events:none;z-index:0;
+  background:conic-gradient(from 220deg at 65% 45%,
+    transparent 0deg,rgba(124,83,208,.09) 25deg,
+    rgba(91,208,235,.08) 48deg,transparent 80deg);
+  filter:blur(40px);
+  animation:drift 16s ease-in-out infinite alternate;
+}
+@keyframes drift{
+  to{transform:translate3d(-3%,4%,0) rotate(8deg)}
+}
+.wrap{position:relative;z-index:1}
+.nav{
+  width:min(1180px,calc(100% - 48px));margin:auto;
+  min-height:84px;display:flex;align-items:center;
+  justify-content:space-between;border-bottom:1px solid var(--line);
+  gap:16px;
+}
+.brand{display:flex;align-items:center;gap:13px}
+.sigil{
+  width:42px;height:42px;border:1px solid rgba(199,165,255,.72);
+  transform:rotate(45deg);display:grid;place-items:center;
+  box-shadow:0 0 26px rgba(163,113,255,.18);flex-shrink:0;
+}
+.sigil span{transform:rotate(-45deg);font-size:22px;color:var(--violet)}
+.brand strong{display:block;font-size:14px;letter-spacing:.13em}
+.brand small{
+  display:block;color:#8f86ad;font-size:9px;
+  letter-spacing:.24em;margin-top:4px;
+}
+.nav-right{
+  font-size:10px;letter-spacing:.18em;color:#c4bdd9;
+  display:flex;align-items:center;gap:10px;
+}
+.live{
+  width:6px;height:6px;border-radius:50%;
+  background:#8ce9d0;box-shadow:0 0 12px #8ce9d0;
+}
+main{
+  width:min(1180px,calc(100% - 48px));margin:auto;
+  min-height:calc(100vh - 145px);
+  display:grid;grid-template-columns:minmax(0,1fr) 390px;
+  align-items:center;gap:70px;padding:70px 0 78px;
+}
+.hero{position:relative}
+.kicker{
+  display:flex;align-items:center;gap:12px;color:var(--cyan);
+  font-size:10px;letter-spacing:.3em;font-weight:800;
+}
+.kicker:before{
+  content:"";width:32px;height:1px;
+  background:linear-gradient(90deg,var(--cyan),transparent);
+}
+.hero h1{
+  font-size:clamp(48px,7vw,88px);line-height:1.1;
+  letter-spacing:.035em;margin:24px 0 18px;font-weight:900;
+  text-shadow:0 6px 38px #0008;
+}
+.hero h1 span{
+  display:block;
+  background:linear-gradient(100deg,#fff 4%,#d9c4ff 40%,#8ceaff 75%,#fff 100%);
+  background-clip:text;-webkit-background-clip:text;color:transparent;
+}
+.hero p{
+  max-width:490px;color:#c4bdd7;line-height:2.05;
+  font-size:14px;margin:0;
+}
+.rule{
+  width:110px;height:2px;
+  background:linear-gradient(90deg,var(--violet),var(--cyan),transparent);
+  margin:28px 0;
+}
+.tags{display:flex;flex-wrap:wrap;gap:9px}
+.tag{
+  padding:8px 12px;border:1px solid rgba(199,165,255,.24);
+  background:rgba(27,21,52,.5);color:#ddd2f8;
+  font-size:10px;letter-spacing:.08em;backdrop-filter:blur(8px);
+}
+.orbit{
+  position:absolute;left:42%;top:18%;width:270px;height:270px;
+  border:1px solid rgba(180,155,255,.09);border-radius:50%;
+  pointer-events:none;transform:translateX(-50%);
+}
+.orbit:before,.orbit:after{
+  content:"";position:absolute;border:1px solid rgba(131,233,255,.12);
+  border-radius:50%;inset:25px -20px;transform:rotate(54deg);
+}
+.orbit:after{inset:50px -35px;transform:rotate(-38deg)}
+.panel{
+  position:relative;padding:27px;
+  border:1px solid rgba(213,197,255,.22);
+  background:linear-gradient(145deg,rgba(39,30,72,.82),rgba(12,12,29,.94) 72%);
+  box-shadow:0 30px 100px #0008,inset 0 1px rgba(255,255,255,.06);
+  backdrop-filter:blur(18px);overflow:hidden;
+}
+.panel:before{
+  content:"";position:absolute;right:-60px;top:-95px;
+  width:220px;height:220px;border-radius:50%;
+  background:rgba(145,104,255,.18);filter:blur(36px);pointer-events:none;
+}
+.panel:after{
+  content:"";position:absolute;left:0;top:0;width:100%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--violet),var(--cyan),transparent);
+}
+.panel-label{
+  font-size:9px;letter-spacing:.25em;color:var(--cyan);position:relative;
+}
+.feature-art{
+  height:154px;margin:20px 0 21px;position:relative;overflow:hidden;
+  border:1px solid rgba(214,199,255,.18);
+  background:
+    radial-gradient(ellipse at 50% 115%,rgba(131,233,255,.4),transparent 42%),
+    radial-gradient(ellipse at 72% 30%,rgba(195,145,255,.38),transparent 32%),
+    linear-gradient(135deg,#17112f,#111d3c 52%,#24143c);
+}
+.feature-art:before{
+  content:"✦";position:absolute;left:50%;top:44%;
+  transform:translate(-50%,-50%);font-size:76px;color:#e7dcff;
+  text-shadow:0 0 22px #b18cff,0 0 65px #7b68ff;
+  animation:pulse 4s ease-in-out infinite;
+}
+.feature-art:after{
+  content:"ASTRAL EXPRESS · INTERSTELLAR JOURNEY";
+  position:absolute;bottom:13px;left:15px;right:15px;
+  text-align:center;font-size:8px;letter-spacing:.2em;
+  color:#e2dcff;opacity:.85;
+}
+@keyframes pulse{
+  50%{
+    text-shadow:0 0 32px #b18cff,0 0 90px #7b68ff;
+    transform:translate(-50%,-52%) scale(1.05);
+  }
+}
+.panel-title{font-size:21px;font-weight:900;letter-spacing:.04em}
+.panel-sub{font-size:10px;color:var(--muted);margin-top:6px;line-height:1.8}
+.items{margin-top:20px;border-top:1px solid var(--line)}
+.item{
+  display:flex;gap:13px;align-items:center;padding:15px 0;
+  border-bottom:1px solid rgba(223,211,255,.09);
+}
+.ico{
+  width:38px;height:38px;flex:0 0 38px;
+  display:grid;place-items:center;border:1px solid rgba(131,233,255,.22);
+  color:var(--cyan);background:rgba(131,233,255,.055);font-size:17px;
+}
+.item b{display:block;font-size:12px}
+.item small{display:block;margin-top:4px;color:#a59dbd;font-size:10px}
+.cta{
+  display:flex;align-items:center;justify-content:space-between;gap:15px;
+  margin-top:23px;padding:16px 18px;color:#100d20;text-decoration:none;
+  background:linear-gradient(105deg,#e6d7ff,#a9edff 80%);
+  box-shadow:0 8px 30px rgba(131,190,255,.16);
+  transition:transform .2s,filter .2s;
+}
+.cta:hover{transform:translateY(-3px);filter:brightness(1.08)}
+.cta b{font-size:13px;letter-spacing:.08em}
+.cta small{display:block;margin-top:4px;font-size:9px;opacity:.7}
+.arrow{font-size:23px}
+.note{font-size:9px;color:#8f87a8;line-height:1.8;text-align:center;margin:13px 0 0}
+footer{
+  width:min(1180px,calc(100% - 48px));margin:auto;min-height:60px;
+  border-top:1px solid var(--line);display:flex;
+  justify-content:space-between;align-items:center;gap:12px;
+  color:#827a9e;font-size:9px;letter-spacing:.1em;
+}
+.footer-brand{color:#bdb2dc}
+@media(max-width:850px){
+  main{grid-template-columns:1fr;gap:42px;width:min(570px,calc(100% - 36px));padding:56px 0}
+  .hero h1{font-size:clamp(46px,11vw,72px)}
+  .panel{max-width:500px;width:100%;margin:auto}
+  .orbit{left:75%;top:13%;width:200px;height:200px}
+  .nav,footer{width:calc(100% - 36px)}
+}
+@media(max-width:480px){
+  .nav{min-height:72px}
+  .brand strong{font-size:12px}
+  .nav-right{font-size:8px;letter-spacing:.08em}
+  main{padding-top:44px}
+  .hero p{font-size:13px}
+  .panel{padding:21px 18px}
+  .feature-art{height:135px}
+  footer{padding:18px 0;flex-wrap:wrap;line-height:1.7}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+}
+</style>
 </head>
-
 <body>
-  <section class="hero">
-    <header class="nav">
-      <div>
-        <div class="logo">星穹鐵道</div>
-        <div class="logo-en">HONKAI: STAR RAIL</div>
-      </div>
-      <span class="archive">EVENT ARCHIVE ✦</span>
-    </header>
+<div class="aurora"></div>
+<div class="wrap">
 
-    <div class="hero-content">
-      <p class="eyebrow">TRAILBLAZE · COSMIC JOURNEY</p>
-      <h1>星際活動專區</h1>
-      <p class="subtitle">
-        相遇在浩瀚星海，開啟全新的旅程<br>
-        查看活動資訊與相關內容
-      </p>
+<header class="nav">
+  <div class="brand">
+    <div class="sigil"><span>✦</span></div>
+    <div>
+      <strong>崩壞：星穹鐵道</strong>
+      <small>HONKAI: STAR RAIL · FAN PAGE</small>
+    </div>
+  </div>
+  <div class="nav-right">
+    <span class="live"></span>
+    <span>星際情報 · 特別企劃</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="orbit"></div>
+    <div class="kicker">WELCOME ABOARD · TRAILBLAZER</div>
+    <h1>星海無垠，<span>旅途未完。</span></h1>
+    <p>
+      列車即將啟程，下一站由你決定。探索星際旅程、角色故事與期間企劃，
+      讓每一次相遇，都成為旅途中閃耀的記憶。
+    </p>
+    <div class="rule"></div>
+    <div class="tags">
+      <span class="tag">✦ 星穹列車</span>
+      <span class="tag">✧ 開拓旅程</span>
+      <span class="tag">⌁ 星際檔案</span>
     </div>
   </section>
 
-  <main>
-    <section class="panel">
-      <div class="event-heading">
-        <div class="icon-box" aria-hidden="true">✦</div>
-        <div>
-          <div class="label">EVENT INFORMATION</div>
-          <h2>活動資訊專區</h2>
-          <p class="desc">探索星際旅程，查看活動相關資訊</p>
-        </div>
+  <aside class="panel">
+    <div class="panel-label">SPECIAL TRANSMISSION / 001</div>
+    <div class="feature-art" aria-label="星際主題裝飾圖"></div>
+    <div class="panel-title">星際旅程情報站</div>
+    <div class="panel-sub">
+      TRAILBLAZE YOUR OWN DESTINY<br>
+      查看企劃內容與最新消息
+    </div>
+
+    <div class="items">
+      <div class="item">
+        <div class="ico">✧</div>
+        <div><b>角色與命途</b><small>探索角色魅力與不同命途</small></div>
       </div>
-
-      <div class="line"></div>
-
-      <div class="status">
-        <span>專區資訊</span>
-        <span class="status-value">✦ 星際探索</span>
+      <div class="item">
+        <div class="ico">◇</div>
+        <div><b>星際補給情報</b><small>整理活動資訊與相關內容</small></div>
       </div>
-    </section>
+      <div class="item">
+        <div class="ico">✦</div>
+        <div><b>期間限定企劃</b><small>前往 LINE 查看更多詳情</small></div>
+      </div>
+    </div>
 
-    <a
-      class="cta"
-      href="https://lin.ee/TNdtqmm"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="前往 LINE 活動專區"
-    >
-      <span>前往 LINE 活動專區</span>
-      <span aria-hidden="true">↗</span>
+    <a class="cta" href="https://lin.ee/ztWNt6Ik" target="_blank" rel="noopener noreferrer">
+      <span>
+        <b>開啟星際情報</b>
+        <small>前往 LINE 查看活動內容</small>
+      </span>
+      <span class="arrow">↗</span>
     </a>
 
-    <p class="hint">
-      點擊按鈕將開啟外部 LINE 頁面
+    <p class="note">
+      本頁為粉絲主題展示頁，非遊戲官方網站。<br>
+      請以遊戲內公告為準。
     </p>
+  </aside>
+</main>
 
-    <section class="features" aria-label="專區特色">
-      <div class="feature">
-        <div class="feature-icon" aria-hidden="true">✧</div>
-        <p>活動內容</p>
-        <small>EVENT</small>
-      </div>
+<footer>
+  <span class="footer-brand">HONKAI: STAR RAIL · INTERSTELLAR ARCHIVE</span>
+  <span>粉絲主題設計 · 2026</span>
+  <span>TO THE STARS</span>
+</footer>
 
-      <div class="feature">
-        <div class="feature-icon" aria-hidden="true">✦</div>
-        <p>最新資訊</p>
-        <small>NEWS</small>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon" aria-hidden="true">♧</div>
-        <p>星際旅程</p>
-        <small>STAR RAIL</small>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-logo">星穹鐵道</div>
-      <div class="footer-en">HONKAI: STAR RAIL</div>
-      <p class="disclaimer">
-        本頁為非官方粉絲製作頁面，與 HoYoverse 無隸屬關係。<br>
-        遊戲名稱及相關商標歸其各自權利人所有。
-      </p>
-    </footer>
-  </main>
+</div>
 </body>
 </html>
